@@ -55,21 +55,21 @@ size: 1
 energy: 500
 posture: 1
 
-// Choose a random number in the range [0, 3]
-mem[7] = -1 --> mem[7] := random[3];
+// Choose a random number in the range [1, 4]
+mem[7] = 0 --> mem[7] := random[3] + 1;
 
-// Move forward, move backward, turn left, or turn right depending on the 
-// chosen number
-mem[7] = 0 --> mem[7] := -1
+// Move forward, move backward, turn left, or turn right
+// depending on the chosen number and reset the number
+mem[7] = 1 --> mem[7] := 0
                forward;
 
-mem[7] = 1 --> mem[7] := -1
+mem[7] = 2 --> mem[7] := 0
                backward;
 
-mem[7] = 2 --> mem[7] := -1
+mem[7] = 3 --> mem[7] := 0
                left;
 
-mem[7] = 3 --> mem[7] := -1
+mem[7] = 4 --> mem[7] := 0
                right;
 ```
 <p align="center"><b>Figure 2:</b> the genome of a critter that randomly moves every time step.</p>
